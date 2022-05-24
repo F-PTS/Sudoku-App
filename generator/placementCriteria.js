@@ -9,7 +9,7 @@
 // 1. numberToPlace nie może istnieć w rzędzie
 const isRowSafe = (mapToSolve, emptyCell, numberToPlace) => {
     // jesli rząd mapy, w którym program nie znajdzie numberToPlace zwróci false
-    return mapToSolve[emptyCell.rowIndex].find(num => num == numberToPlace) == -1
+    return mapToSolve[emptyCell.rowIndex].indexOf(numberToPlace) == -1
 }
 
 // 2. numberToPlace nie może istnieć w kolumnie.
@@ -17,7 +17,7 @@ const isColumnSafe = (mapToSolve, emptyCell, numberToPlace) => {
     // żeby sprawdzić czy numberToPlace istnieje w kolumnie, trzeba
     // przeiterować przez każdy row tablicy mapToSolve (rowToCheck) i wtedy sprawdzić,
     // czy w każdym z rowToCheck[emptyCell.columnIndex] jest już numberToPlace
-    return !mapToSolve.some(rowToCheck[emptyCell.columnIndex] == numberToPlace) 
+    return !mapToSolve.some(rowToCheck => rowToCheck[emptyCell.columnIndex] == numberToPlace) 
 }
 
 // 3. numberToPlace nie może istnieć w tym samym, małym kwadracie 3x3
@@ -31,12 +31,12 @@ const isBoxSafe = (mapToSolve, emptyCell, numberToPlace) => {
     //  -------------
     //  |   |   |   |
 
-    boxStartRow = emptyCell.rowIndex - (emptyCell.rowIndex % 3) // musimy odejmować index % 3 bo js indexuje od 0
-    boxStartColumn = emptyCell.columnIndex - (emptyCell.rowIndex % 3) // musimy odejmować index % 3 bo js indexuje od 0
+    let boxStartRow = emptyCell.rowIndex - (emptyCell.rowIndex % 3) // musimy odejmować index % 3 bo js indexuje od 0
+    let boxStartColumn = emptyCell.columnIndex - (emptyCell.rowIndex % 3) // musimy odejmować index % 3 bo js indexuje od 0
     let isSafe = true
 
-    for(boxRow of [0, 1, 2]) {
-        for(boxColumn of [0, 1, 2]) {
+    for(let boxRow of [0, 1, 2]) {
+        for(let boxColumn of [0, 1, 2]) {
             if(mapToSolve[boxStartRow + boxRow][boxStartColumn + boxColumn] == numberToPlace){
                 isSafe = false
             }
@@ -50,6 +50,6 @@ const isBoxSafe = (mapToSolve, emptyCell, numberToPlace) => {
 // która nie łamie żadnych zasad
 export const safeToPlace = (mapToSolve, emptyCell, numberToPlace) => {
     return isRowSafe(mapToSolve, emptyCell, numberToPlace) &&
-            isColumnSafe(mapToSolve, emptyCell, numberToPlace) &&
-            isBoxSafe(mapToSolve, emptyCell, numberToPlace)
+    isColumnSafe(mapToSolve, emptyCell, numberToPlace) &&
+    isBoxSafe(mapToSolve, emptyCell, numberToPlace)
 }
