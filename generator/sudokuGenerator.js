@@ -81,11 +81,10 @@ const fillSudoku = mapToFill => {
     return false
 }
 
-const newSolvedMap = () => {
+const completedSudoku = () => {
     const newMap = blankMap.map( row => row.slice() ) // nie użyłem [...blankMap] bo słabo nadaje się to do klonowania wielowymiarowych tablic.
-    const filledMap = fillSudoku(newMap)
-    return filledMap
+    return fillSudoku(newMap)
 }
 
-console.log(newSolvedMap());
+export {completedSudoku, fillSudoku}
 
