@@ -12,6 +12,8 @@ const blankMap = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
+let counter;
+
 // żeby wypełnić randomowymi wartościami (funkcja fillSudoku), najpierw musimy sprawić 
 // czy wszystkie komórki z wartością 0 zostały wskazane przez funkcję nextEmptyCell.
 // następnie musimy wylosować liczbę sprzedziału (0, 9> czyli posibbleNumbers
@@ -53,11 +55,14 @@ const nextEmptyCell = mapToSolve => {
 const fillSudoku = mapToFill => {
     const emptyCell = nextEmptyCell(mapToFill);
 
-    console.log('jdvaudv ', emptyCell)
-
     if (!emptyCell) return mapToFill
 
     for(let numberToPlace of shuffle(possibleNumbers)){
+
+        counter++
+
+        if ( counter > 20_000_000 ) throw new Error ("Recursion Timeout") // jeśli tego nie dodamy, stworzymy rekurencyjny loop
+
         if (safeToPlace(mapToFill, emptyCell, numberToPlace)){
             // wstaw numberToPlace
             mapToFill[emptyCell.rowIndex][emptyCell.columnIndex] = numberToPlace
