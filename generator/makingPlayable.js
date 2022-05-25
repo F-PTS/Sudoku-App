@@ -19,7 +19,7 @@ const removeRandom = (solvedMap, holes) => {
         })
         solvedMap[randomRowIndex][randomColumnIndex] = 0 // usuwamy pole z wartością
 
-        const proposedMap = solvedMap.map(row => row.slice())
+        let proposedMap = solvedMap.map(row => row.slice())
         
         // teraz, korzystając z algorytmu backtrackingowego próbujemy rozwiązać clonedMap.
         // jeżeli nie da się, przywracamy usuniętą wartość i usuwamy ją z listy

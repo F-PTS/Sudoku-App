@@ -13,14 +13,14 @@ export const getGames = async (req, res) => {
     }
 }
 
-export const createGame = (req, res) => {
+export const createGame = async (req, res) => {
     const game_req = req.body;
     
     // create new game using game schema and data from game_req
     const newGame = new game(game_req);
 
     try {
-        newGame.save();
+        await newGame.save();
 
         res.status(201).json(newGame);
     } catch (err) {
