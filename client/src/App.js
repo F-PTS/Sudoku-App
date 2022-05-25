@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const App = () => {
-    return(
+    return (
         <div>
-            <h1>App works :D</h1>
+            <h1>Hello world once again lol</h1>
         </div>
     );
 }
