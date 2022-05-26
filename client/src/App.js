@@ -6,7 +6,7 @@ import { getGames } from './actions/games';
 
 import Games from './components/Games/Games';
 // import Game from './components/Games/Game/Game'
-// import Generator from './components/Generator/Generator'
+import Generator from './components/Generator/Generator'
 
 import classes from './styles.js';
 // import gamesClasses from './components/Games/style'
@@ -33,17 +33,13 @@ const App = () => {
                     similique et excepturi!
                 </Typography>
             </AppBar>
+            <Button variant="contained" fullWidth="true">Create new game</Button>
+            <Generator />
             <Grow in>
                 <Container>
-                    <Grid container justify='space-between' alignItems='stretch' spacing={2}>
+                    <Grid container justify='space-between' alignItems='stretch' spacing={5}>
                         <Grid item xs={12} sm={7}>
                             <Games />
-                        </Grid>
-                        <Grid item xs={12} sm={3}>
-                            {
-                                // add href to the button below
-                            }
-                            <Button variant="contained">Create new game</Button>
                         </Grid>
                     </Grid>
                 </Container>
