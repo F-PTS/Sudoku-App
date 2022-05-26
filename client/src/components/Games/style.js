@@ -8,4 +8,4 @@ const gamesClasses = {
     }
 } 
 
-export default gamesClasses
+export default gamesClasses;

@@ -1,15 +1,15 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import Game from './Game/Game'
+import Game from './Game/Game';
 
 // import gamesClasses from './components/Games/style'
 
 const Games = () => {
 
-    const games = useSelector((state) => state.games)
+    const games = useSelector((state) => state.games);
 
-    console.log(games)
+    console.log(games);
 
     return (
         <>
@@ -17,7 +17,7 @@ const Games = () => {
             <Game />
             <Game />
         </>
-    )
+    );
 }
 
-export default Games
+export default Games;

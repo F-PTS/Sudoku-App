@@ -41,4 +41,4 @@ const gameClasses = {
     }
 }
 
-export default gameClasses
+export default gameClasses;

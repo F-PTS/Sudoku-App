@@ -1,7 +1,12 @@
-const reducer = (games = [], action) => {
-    if(action.type === 'CREATE') return games;
-    if(action.type === 'FETCH_ALL') return games;
-
-    return games;
+const gamesReducer = (games = [], action) => {
+    switch(action.type) {
+        case 'FETCH_ALL':
+            return action.payload;
+        case 'CREATE':
+            return games;
+        default:
+            return games;
+    }
 }
-export default reducer;
+
+export default gamesReducer;

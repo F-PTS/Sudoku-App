@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
-import { Container, AppBar, Typography, Grow, Grid } from '@mui/material'
-import { useDispatch } from 'react-redux'
+import React, { useEffect } from 'react';
+import { Container, AppBar, Typography, Grow, Grid, Button } from '@mui/material';
+import { useDispatch } from 'react-redux';
 
-import { getGames } from './actions/games'
+import { getGames } from './actions/games';
 
-import Games from './components/Games/Games'
+import Games from './components/Games/Games';
 // import Game from './components/Games/Game/Game'
 // import Generator from './components/Generator/Generator'
 
-import classes from './styles.js'
+import classes from './styles.js';
 // import gamesClasses from './components/Games/style'
 // import gameClasses from './components/Games/Game/style'
 
@@ -18,7 +18,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(getGames());
-    }, [dispatch])
+    }, [dispatch]);
 
     return (
         <Container maxWidth="lg">
@@ -41,8 +41,9 @@ const App = () => {
                         </Grid>
                         <Grid item xs={12} sm={3}>
                             {
-                                // button with href to generatorPage 
+                                // add href to the button below
                             }
+                            <Button variant="contained">Create new game</Button>
                         </Grid>
                     </Grid>
                 </Container>
