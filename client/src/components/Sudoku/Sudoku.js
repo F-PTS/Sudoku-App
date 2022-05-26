@@ -3,7 +3,7 @@ import React from "react";
 const Sudoku = (map) => {
     return (
         <>
-            <h1>Random</h1>
+            <h1>tu bedzie mapa</h1>
         </>
     )
 }

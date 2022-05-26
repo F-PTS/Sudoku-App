@@ -30,8 +30,8 @@ const Generator = () => {
 
                 <ButtonGroup sx={{marginTop: '25px'}} variant="contained" size="small" xs={12} sm={7}> 
                     <Button size="small" color="error">dalate game</Button>
-                    <Button size="small">Generate map</Button>
-                    <Button size="small" color="success">Save game</Button>
+                    <Button size="small">generate new map</Button>
+                    <Button size="small" color="success">save game</Button>
                 </ButtonGroup>
             </Container>
         </Paper>
