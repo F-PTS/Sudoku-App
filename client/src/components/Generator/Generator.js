@@ -26,7 +26,7 @@ const Generator = () => {
                         size="small"
                         fullWidth="true"
                         value={gameData.name}
-                        onChange={(e) => setGameData({...gameData, name: e.target.value})}/>
+                        onChange={e => setGameData({...gameData, name: e.target.value})}/>
 
                 <ButtonGroup sx={{marginTop: '25px'}} variant="contained" size="small" xs={12} sm={7}> 
                     <Button size="small" color="error">dalate game</Button>
