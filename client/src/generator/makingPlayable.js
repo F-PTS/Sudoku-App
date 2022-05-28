@@ -31,8 +31,4 @@ const removeRandom = (solvedMap, holes) => {
     return [removedValues, solvedMap]
 }
 
-let chwilowa = completedSudoku();
-
-console.log(chwilowa);
-console.log('\n \n \n ______________________ \n \n \n')
-console.log(removeRandom(chwilowa, 5));
+export { removeRandom, completedSudoku }
