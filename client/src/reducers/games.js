@@ -1,9 +1,11 @@
-const gamesReducer = (games = [], action) => {
-    switch(action.type) {
+import { accordionActionsClasses } from "@mui/material";
+
+const gamesReducer = (games = [], actions) => {
+    switch(actions.type) {
         case 'FETCH_ALL':
-            return action.payload;
+            return actions.payload;
         case 'CREATE':
-            return games;
+            return [ ...games, actions.payload ];
         default:
             return games;
     }

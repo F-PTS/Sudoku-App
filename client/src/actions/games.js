@@ -11,3 +11,13 @@ export const getGames = () => async (dispatch) => {
         console.log(err.message)
     }
 }
+
+export const createGame = game => async (dispatch) => {
+    try {
+        const { data } = await api.createGame(game);
+
+        dispatch({type: 'CREATE', payload: data})
+    } catch(err) {
+        console.log(err);
+    }
+}

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Button, ButtonGroup, Container, TextField, Paper, Typography } from '@mui/material'
 
+import { createGame } from '../../actions/games'
 import Sudoku from '../Sudoku/Sudoku';
 
 const Generator = () => {
@@ -11,7 +13,20 @@ const Generator = () => {
         date: new Date(),
         isSolved: false,
         mapID: ''
+        //userID
     })
+    const dispatch = useDispatch();
+
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        dispatch(createGame(gameData));
+    }
+
+    const clear = () => {
+
+    }
 
     return (
         <Paper sx={{padding: '25px 0'}}>
