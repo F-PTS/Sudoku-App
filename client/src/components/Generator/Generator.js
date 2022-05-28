@@ -47,7 +47,7 @@ const Generator = () => {
                             sx={{margin: '25px 0'}}/>
 
                     <ButtonGroup variant="contained" size="small" xs={12} sm={7}> 
-                        <Button size="small" color="error" onclick={clear}>dalate game</Button>
+                        <Button size="small" color="error" onclick={clear}>delate game</Button>
                         <Button size="small">generate new map</Button>
                         <Button size="small" color="success" type="submit">save game</Button>
                     </ButtonGroup>
